@@ -1,8 +1,8 @@
 import { getConfig } from "./config.ts";
 import { pogo } from "./deps.ts";
 
-const main = () => {
-  const config = getConfig();
+const main = async () => {
+  const config = await getConfig();
 
   const server = pogo.server({ port: config.appPort });
 
@@ -14,5 +14,5 @@ const main = () => {
 };
 
 if (import.meta.main) {
-  main();
+  await main();
 }

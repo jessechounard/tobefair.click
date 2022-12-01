@@ -13,8 +13,8 @@ const getVar = (
   return dotenvConfig[varName] ?? Deno.env.get(varName) ?? defaultValue;
 };
 
-export const getConfig = (): Config => {
-  const dotenvConfig = dotenv.configSync();
+export const getConfig = async (): Promise<Config> => {
+  const dotenvConfig = await dotenv.config();
 
   return {
     appPort: parseInt(getVar("APP_PORT", dotenvConfig, "8000")),

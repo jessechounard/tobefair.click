@@ -46,6 +46,11 @@ export async function actorRequest(
     type: "Person",
     preferredUsername: "jessechounard",
     inbox: "https://tobefair.click/inbox",
+    icon: {
+      type: "Image",
+      mediaType: "image/jpg",
+      url: "https://media.hachyderm.io/accounts/avatars/109/354/505/112/302/472/original/9a34caf445e43562.jpeg",
+    },
 
     publicKey: {
       id: "https://tobefair.click/actors/jessechounard#main-key",

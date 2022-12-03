@@ -9,7 +9,13 @@ type webfinger = {
 const main = async () => {
   const config = await getConfig();
 
-  const server = pogo.server({ port: config.appPort });
+  const server = pogo.server({
+    port: config.appPort,
+    catchAll: (request, h) => {
+      console.log(request.url);
+      return "";
+    },
+  });
 
   server.router.get("/", () => {
     return "Hello, world!";

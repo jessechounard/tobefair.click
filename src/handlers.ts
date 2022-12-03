@@ -19,6 +19,8 @@ export async function webfingerHandler(
   request: pogo.Request,
   h: pogo.Toolkit
 ): Promise<Webfinger> {
+  console.log(request.url);
+
   // todo: look at the query params and make sure they're even looking for this
   return {
     subject: "acct:jessechounard@tobefair.click",
@@ -36,6 +38,8 @@ export async function actorRequest(
   request: pogo.Request,
   h: pogo.Toolkit
 ): Promise<object> {
+  console.log(request.url);
+
   return {
     "@context": [
       "https://www.w3.org/ns/activitystreams",

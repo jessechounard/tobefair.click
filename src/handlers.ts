@@ -26,6 +26,11 @@ export async function webfingerHandler(
     subject: "acct:jessechounard@tobefair.click",
     links: [
       {
+        rel: "http://webfinger.net/rel/profile-page",
+        type: "text/html",
+        href: "https://jessechounard.dev/",
+      },
+      {
         rel: "self",
         type: "application/activity+json",
         href: "https://tobefair.click/actors/jessechounard",
